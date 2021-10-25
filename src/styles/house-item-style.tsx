@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
-// 1c1b29
-// 5865f3
+export const HouseContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5%;
+  row-gap: 50px;
+  width: 90%;
+  margin: auto;
+`;
 
 export const House = styled.div`
   background-color: #212529;
   border-radius: 20px;
-  width: 400px;
+  width: 30%;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
 `;
 
