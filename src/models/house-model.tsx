@@ -8,4 +8,5 @@ export type HouseModel = {
 
 export type HousesModel = {
   houses: HouseModel[];
+  ok: boolean;
 };
