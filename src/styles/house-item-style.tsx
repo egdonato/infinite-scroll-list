@@ -49,9 +49,3 @@ export const Information = styled.div`
     color: #d7d7d8;
   }
 `;
-
-export const HouseRow = styled.div`
-  width: 30% !important;
-`;
-
-// position: relative !important;

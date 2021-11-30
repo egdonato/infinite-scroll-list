@@ -8,8 +8,8 @@ export function Main() {
   const [housesResponse, setHousesResponse] =
     useState<HousesModel>(initialValue);
 
-  const housesPerPage: number = 10;
-  const totalPages: number = 10;
+  const housesPerPage: number = 20;
+  const totalPages: number = 1000;
 
   useEffect(() => {
     for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
