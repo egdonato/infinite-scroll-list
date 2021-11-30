@@ -8,12 +8,10 @@ export function Main() {
   const [housesResponse, setHousesResponse] =
     useState<HousesModel>(initialValue);
 
-  const housesPerPage: number = 5;
-  const totalPages: number = 3;
+  const housesPerPage: number = 10;
+  const totalPages: number = 10;
 
   useEffect(() => {
-    //QUEDA AGREGAR VIRTUALIZACION PARA EL MANEJO DE GRANDES VOLUMENES DE DATOS
-    //QUEDA AGREGAR UN SKELETON
     for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
       callService(pageNumber);
     }

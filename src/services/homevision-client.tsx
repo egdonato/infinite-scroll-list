@@ -6,10 +6,6 @@ const client = axios.create({
 });
 
 axiosRetry(client, {
-  // Callback to control the delay (in millisecond) between the retried request
-  // In this case it is exponentially between each retry
-  retryDelay: axiosRetry.exponentialDelay,
-
   // Calback that control the condition to retry a failed request
   //In this case it retries if it is a network error or a 5xx error
   retryCondition: axiosRetry.isNetworkOrIdempotentRequestError,

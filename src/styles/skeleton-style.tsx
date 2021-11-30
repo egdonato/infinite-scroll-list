@@ -1,7 +1,7 @@
 import ContentLoader from "react-content-loader";
 
 export const HouseSkeleton = () => (
-  <ContentLoader height={600} style={{ width: "30%" }}>
+  <ContentLoader height={600} style={{ width: "100%" }}>
     <rect rx="0" ry="0" width="3" x="400" y="5" height="700" />
     <rect rx="0" ry="0" width="3" x="15" y="5" height="700" />
     <rect rx="0" ry="0" width="385" height="3" x="15" y="5" />
