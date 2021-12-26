@@ -3,7 +3,7 @@ import { HouseContainer } from "../styles/house-item-style";
 import { HouseSkeleton } from "../components/skeleton-style";
 import React, { useEffect, useRef, useState } from "react";
 import { HousesModel, HouseModel } from "./../models/house-model";
-import client from "./../services/homevision-client";
+import Client from "./../services/homevision-client";
 import { useVirtual } from "react-virtual";
 import useIntersectionObserver from "@react-hook/intersection-observer";
 
@@ -36,29 +36,30 @@ export function Main() {
   useEffect(() => {
     callService(currentPage);
     setTotalHouses(housesResponse.houses.length + housesPerPage);
-  }, [currentPage]); //Solo se vuelve a ejecutar si cambia currentPage
+  }, [currentPage]);
 
   function callService(page: number) {
-    client
-      .get<HousesModel>(`/houses?page=${page}&per_page=${housesPerPage}`)
-      .then((response) => {
-        setHousesResponse((prev) => {
-          // Copy of the array with the houses that already exists
-          // This is necessary in order to the new list doesn't replace the old one
-          let oldHouses: HouseModel[] = [...prev.houses];
-          //Combination of the old array with de new array of the service response
-          let newHouses: HouseModel[] = [...oldHouses, ...response.data.houses];
+    let client: Client = new Client();
+    let responsePromise = client.getHousesPromise(page, housesPerPage);
 
-          // A new HousesModel is generated with the new houses data
-          // Service status is also added
-          let newHouseResponse: HousesModel = {
-            houses: newHouses,
-            ok: response.data.ok,
-          };
+    responsePromise.then((response) => {
+      setHousesResponse((prev) => {
+        // Copy of the array with the houses that already exists
+        // This is necessary in order to the new list doesn't replace the old one
+        let oldHouses: HouseModel[] = [...prev.houses];
+        //Combination of the old array with de new array of the service response
+        let newHouses: HouseModel[] = [...oldHouses, ...response.data.houses];
 
-          return newHouseResponse;
-        });
+        // A new HousesModel is generated with the new houses data
+        // Service status is also added
+        let newHouseResponse: HousesModel = {
+          houses: newHouses,
+          ok: response.data.ok,
+        };
+
+        return newHouseResponse;
       });
+    });
   }
 
   return (
