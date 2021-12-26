@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-hook/intersection-observer": "^3.1.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -16,7 +17,7 @@
     "react-content-loader": "^6.0.3",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "react-virtualized": "^9.22.3",
+    "react-virtual": "^2.10.0",
     "styled-components": "^5.3.1",
     "typescript": "^4.4.4",
     "web-vitals": "^1.1.2"

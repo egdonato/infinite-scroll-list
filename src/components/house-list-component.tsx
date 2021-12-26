@@ -1,7 +1,7 @@
 import { HouseItem } from "./house-item-component";
 import { HousesModel } from "../models/house-model";
 import { HouseContainer } from "../styles/house-item-style";
-import { HouseSkeleton } from "../styles/skeleton-style";
+import { HouseSkeleton } from "./skeleton-style";
 import { AutoSizer, Collection } from "react-virtualized";
 
 export function HouseList(props: { houseItemList: HousesModel }) {
@@ -22,7 +22,6 @@ export function HouseList(props: { houseItemList: HousesModel }) {
     style,
   }: {
     index: number;
-    isScrolling: boolean;
     key: number;
     style: React.CSSProperties;
   }) => {
@@ -30,11 +29,6 @@ export function HouseList(props: { houseItemList: HousesModel }) {
 
     return (
       <div key={key} style={style}>
-        {/* {isScrolling ? (
-          <HouseSkeleton key={key}></HouseSkeleton>
-        ) : (
-          <HouseItem key={house.id} item={house}></HouseItem>
-        )} */}
         <HouseItem key={house.id} item={house}></HouseItem>
       </div>
     );

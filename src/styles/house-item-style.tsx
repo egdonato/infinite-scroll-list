@@ -2,23 +2,17 @@ import styled from "styled-components";
 
 export const HouseContainer = styled.div`
   display: flex;
-  row-gap: 50px;
-  margin: auto;
-  height: 100vh;
-
-  & .ReactVirtualized__Grid__innerScrollContainer {
-    display: flex;
-    justify-content: space-around;
-  }
+  justify-content: space-around;
+  flex-wrap: wrap;
 `;
 
 export const House = styled.div`
   background-color: #212529;
   border-radius: 20px;
+  height: 500px;
 `;
 
 export const Container = styled.div`
-  position: relative;
   color: white;
 
   & img {

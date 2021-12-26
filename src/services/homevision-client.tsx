@@ -1,6 +1,8 @@
 import axios from "axios";
 import axiosRetry from "axios-retry";
 
+//Todo crear clase
+
 const client = axios.create({
   baseURL: "http://app-homevision-staging.herokuapp.com/api_project",
 });
