@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# infinite-loader
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+This project obtains a certain amount of data from an external endpoint, rendering this data infinitely when scrolling.
 
-In the project directory, you can run:
+## Dependencies 📋
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Axios
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+This is used because it allows take advantage of async y await to obtain an asynchronous code more legible, also, Axios is compatible with all the news version of all browsers and with old browsers.
+```
 
-### `npm test`
+### Axios Retry
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+Axios plugin that intercepts failed requests and retries them whenever possible.
+It is easy to indicate conditions in which we want to retry.
+```
 
-### `npm run build`
+### Styled Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+Provides unique class names for styles, thus eliminating the problems with class names duplications, misspellings, and overlaps.
+It makes it easier to manage CSS as it provides simple, dynamic styling and freedom to build custom components.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### React Virtual
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+React hook that helps build virtualizers. Very simple implementation and with good documentation.
+```
 
-### `npm run eject`
+### @react-hook/intersection-observer
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+Hook for the IntersectionObserver API with a simple implementación.
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### TypeScript
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+* Class and Module Support
+* Strongly typed programming
+* Syntax Similarity to Backend Languages like Java
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
